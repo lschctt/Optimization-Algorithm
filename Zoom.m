@@ -39,11 +39,15 @@ function f_alpha = Zoom(alp1,alp2,c,x,d,f_type,nm)
           
           % When debug, we may need them.
 %           fprintf("\nLHS3: %f", dot(x_new_grad,d)*(alp2-alp1))
-          if dot(x_new_grad,d)*(alp2-alp1) >= 0
-              alp2=alp;
-          else
-              alp1=alp;
-          end
+%           if dot(x_new_grad,d)*(alp2-alp1) >= 0
+%               alp2=alp;
+%           else
+%               alp1=alp;
+%           end
+            if dot(x_new_grad,d)*(alp2-alp1) >= 0
+                alp2 = alp1;
+            end
+            alp1 = alp;
      end
      % prevent into endless loop
      % In theory, we won't into endless loop, this command is just in case

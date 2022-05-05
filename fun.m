@@ -28,13 +28,11 @@ function result = fun(xx, ii, f_type, nm)
             H = zeros(n,n);
             for i = 1:n-1
                 if mod(i,2)==1
-                    H(i,i) = -40*f(i)+80*xx(i)^2+2;
+                    H(i,i) = -40*f(i)+800*xx(i)^2+2;
                     H(i,i+1) = -400*xx(i);
                     H(i+1,i) = H(i,i+1);
                 else
                     H(i,i) = 200;
-                    H(i,i+1) = -400*xx(i+1);
-                    H(i+1,i) = H(i,i+1);
                 end
             end
 
